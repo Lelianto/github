@@ -11,6 +11,7 @@ const MainRoute = () => {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path='/' component={HomePage} />
+					<Route path='/:username' component={HomePage} />
 				</Switch>
 			</BrowserRouter>
 		</Provider>
