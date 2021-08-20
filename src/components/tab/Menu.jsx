@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
-import { listOfMenu } from '../../assets/svg'
-import './Menu.scss'
+import { listOfMenu } from '../../assets/svg';
+import './Menu.scss';
+import Tab from '../tabmenu/Tab';
 
 const Menu = (props) => {
 	let history = useHistory();
@@ -28,14 +29,7 @@ const Menu = (props) => {
 						}
 
 						return (
-							<div key={content.title} className={defaultClass} onClick={() => onClickChangeNav(content.title)}>
-								<div className="relative m-auto">
-									{content.html}
-								</div>
-								<div className="relative m-auto pl-2 -mt-1">
-									{content.title}
-								</div>
-							</div>
+							<Tab key={content.title} content={content} onClickChangeNav={onClickChangeNav} defaultClass={defaultClass} />
 						)
 					})
 				}
