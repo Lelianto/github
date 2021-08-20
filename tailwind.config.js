@@ -4,6 +4,10 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    container: {
+      center: true,
+      padding: '1rem'
+    },
     colors: () => ({
       ...defaultTheme.colors,
       'primary': '#24292E',
@@ -20,8 +24,10 @@ module.exports = {
     screens: {
       'sm': '320px',
       'md': '640px',
-      'lg': '1024px',
-      'xl': '1280px',
+      'lg': '992px',
+      'xl': '1200px',
+      '2xl': '1440px',
+      '3xl': '1600px'
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
