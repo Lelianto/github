@@ -4,9 +4,11 @@ import { useLocation, useParams } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Menu from '../../components/tab/Menu';
 import Profile from '../../components/profile/Profile';
-import Overview from '../../components/overviewcard/Overview';
 import { getUserData, getRepositories } from '../../stores/reducers/userReducers';
 import { getOrganizationData } from '../../stores/reducers/orgReducers'
+import { listOfMenu } from '../../assets/svg';
+import Repositories from '../../components/repository/Repositories';
+import Empty from '../../components/empty/Empty';
 
 const useQuery = () => {
 	return new URLSearchParams(useLocation().search);
@@ -19,12 +21,13 @@ const HomePage = (props) => {
 	const [scroll, setScroll] = useState(false)
 	const [username, setUsername] = useState('')
 	const [currentTab, setCurrentTab] = useState('Overview')
-	const location = useLocation();
+	const location = useLocation()
 
 	useEffect(() => {
 		dispatch(getUserData(params.username))
 		dispatch(getRepositories(params.username))
 		dispatch(getOrganizationData(params.username))
+		localStorage.setItem("lastUser", params.username)
 	}, [location])
 
 	useEffect(() => {
@@ -43,43 +46,42 @@ const HomePage = (props) => {
 		}
 	}, [])
 
+	const tabContent = () => {
+		if (["Overview", "Repositories"].includes(currentTab)) {
+			return (
+				<>
+					<div className="container text-md mt-5 mb-3 text-left">
+						{currentTab === "Overview" ? "Popular Repositories" : currentTab}
+					</div>
+					<Repositories repositories={props.repositories} />
+				</>
+			)
+		} else {
+			return (
+				<div className="container text-md mt-10 mb-3 text-left">
+					<Empty username={username} currentTab={currentTab} />
+				</div>
+			)
+		}
+	}
+
 	return (
 		<>
 			<div id="main" className="w-full">
-				<Header />
+				<Header lastUser={username} />
+			</div>
+			<div id="main" className="sm:w-full md:container">
+				<br />
+				<Menu scroll={scroll} listOfMenu={listOfMenu} params={params.username} access="index" />
 			</div>
 			<div id="main" className="container min-h-screen">
-				<br />
-				<Menu scroll={scroll} />
-				<div className="container">
+				<div className="w-full">
 					<div className="sm:block md:flex">
 						<div className="sm:w-full md:w-1/4">
 							<Profile user={props.user} organizations={props.organizations} />
 						</div>
 						<div className="sm:w-full md:w-3/4 flex flex-col">
-							<div className="container text-md mt-5 mb-3 text-left">
-								Popular Repositories
-							</div>
-							<div className="w-full flex flex-wrap">
-								<>
-									{
-										props.repositories.response ?
-											<>
-												{
-													props.repositories.response.map(repository => {
-														return (
-															<div key={repository.id} className="sm:w-full md:w-1/2 mb-3 flex">
-																<Overview repository={repository} />
-															</div>
-														)
-													})
-												}
-											</>
-											:
-											<></>
-									}
-								</>
-							</div>
+							{tabContent()}
 						</div>
 					</div>
 				</div>
@@ -92,7 +94,7 @@ const mapStateToProps = state => {
 	return {
 		user: state.userReducer.user,
 		repositories: state.userReducer.repositories,
-		organizations: state.orgReducer.organization
+		organizations: state.orgReducer.organizations
 	}
 }
 

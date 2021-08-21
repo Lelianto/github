@@ -33,7 +33,11 @@ module.exports = {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: () => ({
+        'doodle': "url(/src/assets/images/background.png)"
+      })
+    },
   },
   variants: {
     extend: {
