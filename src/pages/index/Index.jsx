@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useHistory } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Menu from '../../components/tab/Menu';
 import Profile from '../../components/profile/Profile';
@@ -18,12 +18,15 @@ const HomePage = (props) => {
 	let dispatch = useDispatch()
 	let params = useParams()
 	let queries = useQuery()
+	let history = useHistory();
 	const [scroll, setScroll] = useState(false)
 	const [username, setUsername] = useState('')
 	const [currentTab, setCurrentTab] = useState('Overview')
 
 	useEffect(() => {
-		dispatch(getUserData(params.username))
+		dispatch(getUserData(params.username)).then(response => {
+			if (response.message) return history.push('/login')
+		})
 		dispatch(getRepositories(params.username))
 		dispatch(getOrganizationData(params.username))
 		localStorage.setItem("lastUser", params.username)

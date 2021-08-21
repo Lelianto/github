@@ -15,17 +15,11 @@ const Header = ({ lastUser }) => {
 		setText(e)
 	}
 
-
-
 	useEffect(() => {
-		function checkUser() {
-			if (!(params.username || params.orgname)) {
-				history.push(`/login`);
-			}
+		if (!(params.username || params.orgname)) {
+			history.push(`/login`);
 		}
-
-		checkUser()
-	}, [location, params.username, params.orgname, history]);
+	}, [location]);
 
 	const handleKeyPress = (e) => {
 		if (e.which === 13) {
