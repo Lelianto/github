@@ -19,11 +19,11 @@ export const userReducer = (state = initialState, action) => {
 }
 
 export const getUserData = (data) => async (dispatch, getState) => {
-	const user = await fetch(`https://api.github.com/users/${data}`).then(res => res.json())
+	const user = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}`).then(res => res.json())
 	dispatch(getUser(user))
 }
 
 export const getRepositories = (data) => async (dispatch, getState) => {
-	const repositories = await fetch(`https://api.github.com/users/${data}/repos`).then(res => res.json())
+	const repositories = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/repos`).then(res => res.json())
 	dispatch(getRepo(repositories))
 }

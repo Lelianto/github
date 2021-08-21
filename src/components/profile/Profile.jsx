@@ -10,12 +10,12 @@ const Profile = ({ user, organizations }) => {
 		return (
 			<>
 				{
-					organizations.length !== 0 ?
+					organizations.length && organizations.length !== 0 ?
 						<>
 							{
 								organizations.map((organization) => {
 									return (
-										<Link key={organization.id} to={`/${organization.login}`}>
+										<Link key={organization.id} to={`/org/${organization.login}`}>
 											<img className="mr-1 mb-1" size="32px" height="32px" width="32px" src={organization.avatar_url} alt="" />
 										</Link>
 									)
@@ -30,9 +30,11 @@ const Profile = ({ user, organizations }) => {
 	}
 	return (
 		<>
-			<div className="container p-3 relative md:-top-8">
+			<div className="w-full p-3 sm:pt-7 md:pt-3 relative md:-top-8">
 				<div className="flex flex-col">
-					<img className="rounded-full img-dynamic" src={user.avatar_url} alt="" />
+					<div className="flex justify-center">
+						<img className="rounded-full img-dynamic" src={user.avatar_url} alt="" />
+					</div>
 					<div className="py-3">
 						<div className="text-left w-full text-2xl">
 							{user.name}
