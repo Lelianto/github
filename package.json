@@ -24,9 +24,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "env-cmd -f .env.staging craco start",
-    "build:dev": "env-cmd -f .env.staging craco build",
-    "build:prod": "env-cmd -f .env.prod craco build",
+    "start": "env-cmd craco start",
+    "build": "env-cmd craco build",
     "test": "craco test",
     "eject": "craco eject",
     "e2etest": "craco test --testPathIgnorePatterns=.*e2e.test.js",
