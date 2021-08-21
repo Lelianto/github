@@ -26,7 +26,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "craco test --testPathPattern=.*spec.js$",
     "eject": "craco eject",
     "e2etest": "craco test --testPathIgnorePatterns=.*e2e.test.js",
     "e2etest:e2e": "craco test --testPathPattern=.*e2e.test.js$"

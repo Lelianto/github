@@ -9,10 +9,10 @@ const OrgProfile = ({ detail }) => {
 						<img className="rounded-md" width="100px" height="100px" src={detail.avatar_url} alt="" />
 					</div>
 					<div className="relative m-auto ml-0">
-						<div className="text-lg font-bold text-black">
+						<div id="orgName" className="text-lg font-bold text-black">
 							{detail.login}
 						</div>
-						<div className="text-sm text-gray-500">
+						<div id="orgDesc" className="text-sm text-gray-500">
 							{detail.description}
 						</div>
 					</div>

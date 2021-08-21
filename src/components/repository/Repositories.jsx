@@ -26,4 +26,4 @@ const Repositories = (props) => {
 	)
 }
 
-export default Repositories
+export default Repositories;

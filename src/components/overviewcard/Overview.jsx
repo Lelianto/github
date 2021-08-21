@@ -14,7 +14,7 @@ const Overview = ({ repository }) => {
 			return (
 				<>
 					<div className="mr-1"><span className="inline-block h-3 w-3 rounded-full" style={setStyle(languageExist)}></span></div>
-					<div className="mr-3">
+					<div id="language" className="mr-3">
 						{languageExist}
 					</div>
 				</>
@@ -34,10 +34,10 @@ const Overview = ({ repository }) => {
 							className="text-blue-700 font-bold"
 							rel="noreferrer"
 						>
-							<span>{repository.name}</span>
+							<span id="repoName">{repository.name}</span>
 						</a>
 					</div>
-					<div className="text-left text-base text-gray-500 break-words">
+					<div id="description" className="text-left text-base text-gray-500 break-words">
 						{repository.description}
 					</div>
 					<div className="flex mt-3">
@@ -46,7 +46,7 @@ const Overview = ({ repository }) => {
 							<div className="relative m-auto ml-0 mr-1">
 								{stars()}
 							</div>
-							<div className="relative m-auto ml-0 mr-1">
+							<div id="count" className="relative m-auto ml-0 mr-1">
 								{repository.stargazers_count}
 							</div>
 						</div>
