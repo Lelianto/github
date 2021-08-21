@@ -6,7 +6,7 @@ const Repositories = (props) => {
 		<div className="w-full flex flex-wrap">
 			<>
 				{
-					props.repositories.response ?
+					props.repositories && props.repositories.response ?
 						<>
 							{
 								props.repositories.response.map(repository => {
