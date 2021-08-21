@@ -15,9 +15,9 @@ const useQuery = () => {
 }
 
 const HomePage = (props) => {
+	let dispatch = useDispatch()
 	let params = useParams()
 	let queries = useQuery()
-	let dispatch = useDispatch()
 	const [scroll, setScroll] = useState(false)
 	const [username, setUsername] = useState('')
 	const [currentTab, setCurrentTab] = useState('Overview')
@@ -28,12 +28,9 @@ const HomePage = (props) => {
 		dispatch(getRepositories(params.username))
 		dispatch(getOrganizationData(params.username))
 		localStorage.setItem("lastUser", params.username)
-	}, [location])
-
-	useEffect(() => {
 		setUsername(params.username)
 		setCurrentTab(queries.get('tab') || 'Overview')
-	}, [location]);
+	}, [location, dispatch, params.username, queries])
 
 	const handleScroll = (event) => {
 		setScroll(event.srcElement.documentElement.scrollTop > 70)
