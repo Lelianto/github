@@ -27,10 +27,10 @@ const Organization = (props) => {
 		dispatch(getOrganizationDetail(params.orgname))
 		dispatch(getOrganizationRepos(params.orgname))
 		setUsername(localStorage.getItem("lastUser"))
-	}, [location, dispatch, params.orgname])
+	}, [params.orgname])
 
 	const handleScroll = (event) => {
-		setScroll(event.srcElement.documentElement.scrollTop > 70)
+		setScroll(event.srcElement.documentElement.scrollTop > 75)
 	}
 
 	useEffect(() => {
@@ -43,7 +43,7 @@ const Organization = (props) => {
 	useEffect(() => {
 		setOrgName(params.orgname)
 		setCurrentTab(queries.get('tab') || 'Overview')
-	}, [location, params.orgname, queries]);
+	}, [location]);
 
 	const tabContent = () => {
 		if (["Overview", "Repositories"].includes(currentTab)) {

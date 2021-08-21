@@ -21,7 +21,6 @@ const HomePage = (props) => {
 	const [scroll, setScroll] = useState(false)
 	const [username, setUsername] = useState('')
 	const [currentTab, setCurrentTab] = useState('Overview')
-	const location = useLocation()
 
 	useEffect(() => {
 		dispatch(getUserData(params.username))
@@ -30,10 +29,10 @@ const HomePage = (props) => {
 		localStorage.setItem("lastUser", params.username)
 		setUsername(params.username)
 		setCurrentTab(queries.get('tab') || 'Overview')
-	}, [location, dispatch, params.username, queries])
+	}, [params.username])
 
 	const handleScroll = (event) => {
-		setScroll(event.srcElement.documentElement.scrollTop > 70)
+		setScroll(event.srcElement.documentElement.scrollTop > 75)
 	}
 
 	useEffect(() => {

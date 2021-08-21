@@ -20,10 +20,11 @@ export const userReducer = (state = initialState, action) => {
 
 export const getUserData = (data) => async (dispatch, getState) => {
 	const user = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}`).then(res => res.json())
-	dispatch(getUser(user))
+	await dispatch(getUser(user))
+	return user
 }
 
 export const getRepositories = (data) => async (dispatch, getState) => {
 	const repositories = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/repos`).then(res => res.json())
-	dispatch(getRepo(repositories))
+	await dispatch(getRepo(repositories))
 }
