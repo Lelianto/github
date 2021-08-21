@@ -5,9 +5,9 @@
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "autoprefixer": "^9",
+    "dotenv": "^10.0.0",
     "element-react": "^1.4.34",
     "element-theme-default": "^1.4.13",
-    "env-cmd": "^10.1.0",
     "postcss": "^7",
     "react": "^17.0.2",
     "react-burger-menu": "^3.0.6",
@@ -24,8 +24,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "env-cmd craco start",
-    "build": "env-cmd craco build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
     "e2etest": "craco test --testPathIgnorePatterns=.*e2e.test.js",
