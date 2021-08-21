@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Input } from 'element-react';
 import { useHistory } from 'react-router-dom'
 import mainLogo from '../../assets/images/mainLogo.jpg'
+import { getUserData } from '../../stores/reducers/userReducers';
 
-const Login = () => {
+const Login = (props) => {
+	let dispatch = useDispatch()
 	let history = useHistory();
 	const [username, setUsername] = useState('')
 
@@ -13,7 +16,13 @@ const Login = () => {
 
 	const handleKeyPress = (e) => {
 		if (e.which === 13 && username) {
-			history.push(`/${username}`);
+			dispatch(getUserData(username)).then(response => {
+				if (!response.message) {
+					history.push(`/${username}`);
+				} else {
+					console.log('error', response)
+				}
+			})
 			setUsername('')
 		}
 	}
@@ -43,5 +52,5 @@ const Login = () => {
 	)
 }
 
-export default Login;
+export default Login
 

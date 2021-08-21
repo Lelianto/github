@@ -32,7 +32,7 @@ const Overview = ({ repository }) => {
 							href={`https://github.com/${repository.full_name}`}
 							target="_blank"
 							className="text-blue-700 font-bold"
-							rel="noopener norefferer"
+							rel="noreferrer"
 						>
 							<span>{repository.name}</span>
 						</a>

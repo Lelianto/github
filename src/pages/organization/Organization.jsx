@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useHistory } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import OrgProfile from '../../components/orgprofile/OrgProfile';
 import { getOrganizationDetail, getOrganizationRepos } from '../../stores/reducers/orgReducers';
@@ -22,15 +22,18 @@ const Organization = (props) => {
 	let params = useParams()
 	let queries = useQuery()
 	let dispatch = useDispatch()
+	let history = useHistory();
 
 	useEffect(() => {
-		dispatch(getOrganizationDetail(params.orgname))
+		dispatch(getOrganizationDetail(params.orgname)).then(response => {
+			if (response.message) return history.push('/login')
+		})
 		dispatch(getOrganizationRepos(params.orgname))
 		setUsername(localStorage.getItem("lastUser"))
-	}, [location])
+	}, [params.orgname])
 
 	const handleScroll = (event) => {
-		setScroll(event.srcElement.documentElement.scrollTop > 70)
+		setScroll(event.srcElement.documentElement.scrollTop > 75)
 	}
 
 	useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useHistory } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Menu from '../../components/tab/Menu';
 import Profile from '../../components/profile/Profile';
@@ -15,28 +15,27 @@ const useQuery = () => {
 }
 
 const HomePage = (props) => {
+	let dispatch = useDispatch()
 	let params = useParams()
 	let queries = useQuery()
-	let dispatch = useDispatch()
+	let history = useHistory();
 	const [scroll, setScroll] = useState(false)
 	const [username, setUsername] = useState('')
 	const [currentTab, setCurrentTab] = useState('Overview')
-	const location = useLocation()
 
 	useEffect(() => {
-		dispatch(getUserData(params.username))
+		dispatch(getUserData(params.username)).then(response => {
+			if (response.message) return history.push('/login')
+		})
 		dispatch(getRepositories(params.username))
 		dispatch(getOrganizationData(params.username))
 		localStorage.setItem("lastUser", params.username)
-	}, [location])
-
-	useEffect(() => {
 		setUsername(params.username)
 		setCurrentTab(queries.get('tab') || 'Overview')
-	}, [location]);
+	}, [params.username])
 
 	const handleScroll = (event) => {
-		setScroll(event.srcElement.documentElement.scrollTop > 70)
+		setScroll(event.srcElement.documentElement.scrollTop > 75)
 	}
 
 	useEffect(() => {

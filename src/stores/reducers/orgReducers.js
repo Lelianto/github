@@ -30,6 +30,7 @@ export const getOrganizationData = (data) => async (dispatch, getState) => {
 export const getOrganizationDetail = (data) => async (dispatch, getState) => {
 	const org = await fetch(`${process.env.REACT_APP_API_URL}/orgs/${data}`).then(res => res.json())
 	dispatch(getDetail(org))
+	return org
 }
 
 export const getOrganizationRepos = (data) => async (dispatch, getState) => {
