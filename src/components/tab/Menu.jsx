@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import * as Scroll from 'react-scroll';
 import './Menu.scss';
 import Tab from '../tabmenu/Tab';
 import MenuIndex from './MenuIndex';
@@ -12,6 +13,10 @@ const Menu = (props) => {
 	const onClickChangeNav = (nav) => {
 		if (nav) {
 			setActivedMenu(nav)
+			if (window.screen.width < 992) {
+				let scroll = Scroll.animateScroll;
+				scroll.scrollTo(window.screen.height);
+			}
 			history.push(`${props.params}?tab=${nav}`);
 		}
 	}

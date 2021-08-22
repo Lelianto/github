@@ -86,7 +86,7 @@ const Organization = (props) => {
 			)
 		} else {
 			return (
-				<div className="sm:w-full md:container text-md mt-5 mb-3 text-left">
+				<div className="sm:w-full md:container text-md mt-10 mb-10 text-left">
 					<Empty username={orgname} currentTab={currentTab} />
 				</div>
 			)

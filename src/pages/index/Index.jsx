@@ -79,7 +79,7 @@ const HomePage = (props) => {
 		if (["Overview", "Repositories"].includes(currentTab)) {
 			return (
 				<>
-					<div className="container text-md mt-5 mb-3 text-left">
+					<div className="sm:w-full lg:container text-md mt-5 mb-3 text-left">
 						{currentTab === "Overview" ? "Popular Repositories" : currentTab}
 					</div>
 					<Repositories repositories={props.repositories} />
@@ -87,7 +87,7 @@ const HomePage = (props) => {
 			)
 		} else {
 			return (
-				<div className="container text-md mt-10 mb-3 text-left">
+				<div className="container text-md mt-10 mb-10 text-left">
 					<Empty username={username} currentTab={currentTab} />
 				</div>
 			)

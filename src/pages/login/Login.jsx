@@ -15,12 +15,14 @@ const Login = () => {
 	let dispatch = useDispatch()
 	let history = useHistory();
 	const [username, setUsername] = useState('')
+	const [error, setError] = useState('')
 
 	/**
 	 * @function onChangeText to make username be changed based on @param e
 	 * @function setUsername to change username text
 	 */
 	const onChangeText = (e) => {
+		setError('')
 		setUsername(e)
 	}
 	/**
@@ -32,7 +34,7 @@ const Login = () => {
 				if (!response.message) {
 					history.push(`/${username}`);
 				} else {
-					console.log('error', response)
+					setError('User not found, input valid username.')
 				}
 			})
 			setUsername('')
@@ -55,6 +57,7 @@ const Login = () => {
 							</div>
 							<div>
 								<Input value={username} className="w-full text-custom" onChange={(e) => onChangeText(e)} onKeyPress={(e) => handleKeyPress(e)} placeholder="Input your github username and press enter" />
+								{error ? <div className="text-left sm:text-xs md:text-sm text-red-600">{error}</div> : <></>}
 							</div>
 						</div>
 					</div>
