@@ -14,15 +14,15 @@ const useQuery = () => {
 }
 
 const Organization = (props) => {
-	const location = useLocation()
+	let location = useLocation()
+	let dispatch = useDispatch()
+	let params = useParams()
+	let queries = useQuery()
+	let history = useHistory();
 	const [scroll, setScroll] = useState(false)
 	const [currentTab, setCurrentTab] = useState('Overview')
 	const [orgname, setOrgName] = useState('')
 	const [username, setUsername] = useState('')
-	let params = useParams()
-	let queries = useQuery()
-	let dispatch = useDispatch()
-	let history = useHistory();
 
 	useEffect(() => {
 		dispatch(getOrganizationDetail(params.orgname)).then(response => {
@@ -70,7 +70,6 @@ const Organization = (props) => {
 	return (
 		<>
 			<div id="main" className="w-full">
-
 				<Header lastUser={username} />
 			</div>
 			<div id="main" className="container">

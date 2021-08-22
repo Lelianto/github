@@ -25,6 +25,7 @@ export const orgReducer = (state = initialState, action) => {
 export const getOrganizationData = (data) => async (dispatch, getState) => {
 	const org = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/orgs`).then(res => res.json())
 	dispatch(getOrganization(org))
+	return org
 }
 
 export const getOrganizationDetail = (data) => async (dispatch, getState) => {
@@ -36,4 +37,5 @@ export const getOrganizationDetail = (data) => async (dispatch, getState) => {
 export const getOrganizationRepos = (data) => async (dispatch, getState) => {
 	const orgRepo = await fetch(`${process.env.REACT_APP_API_URL}/orgs/${data}/repos`).then(res => res.json())
 	dispatch(getOrgRepo(orgRepo))
+	return orgRepo
 }

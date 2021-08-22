@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import mainLogo from '../../assets/images/mainLogo.jpg'
 import { getUserData } from '../../stores/reducers/userReducers';
 
-const Login = (props) => {
+const Login = () => {
 	let dispatch = useDispatch()
 	let history = useHistory();
 	const [username, setUsername] = useState('')

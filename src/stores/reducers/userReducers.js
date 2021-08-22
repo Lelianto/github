@@ -27,4 +27,5 @@ export const getUserData = (data) => async (dispatch, getState) => {
 export const getRepositories = (data) => async (dispatch, getState) => {
 	const repositories = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/repos`).then(res => res.json())
 	await dispatch(getRepo(repositories))
+	return repositories
 }
