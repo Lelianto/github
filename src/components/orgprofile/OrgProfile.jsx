@@ -13,7 +13,7 @@ const OrgProfile = ({ detail }) => {
 							{detail.login}
 						</div>
 						<div id="orgDesc" className="text-sm text-gray-500">
-							{detail.description}
+							{detail.description || '-'}
 						</div>
 					</div>
 				</div>

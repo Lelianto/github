@@ -26,7 +26,7 @@ const Profile = ({ user, organizations }) => {
 						</div>
 					</div>
 					<div id="bio" className="text-left w-full text-base mb-2">
-						{user.bio}
+						{user.bio || '-'}
 					</div>
 					<div className="text-left w-full">
 						<Button className="text-center w-full">Edit profile</Button>
@@ -45,7 +45,7 @@ const Profile = ({ user, organizations }) => {
 								{offices()}
 							</div>
 							<div id="company" className="relative m-auto text-left ml-0 overflow-ellipsis overflow-hidden w-full max-w-full h-6 whitespace-nowrap">
-								{user.company}
+								{user.company || '-'}
 							</div>
 						</div>
 						<div className="flex">
@@ -53,7 +53,7 @@ const Profile = ({ user, organizations }) => {
 								{locations()}
 							</div>
 							<div id="location" className="relative m-auto text-left ml-0 overflow-ellipsis overflow-hidden w-full max-w-full h-6 whitespace-nowrap">
-								{user.location}
+								{user.location || '-'}
 							</div>
 						</div>
 						<div className="flex">
@@ -61,7 +61,7 @@ const Profile = ({ user, organizations }) => {
 								{links()}
 							</div>
 							<div id="blog" className="relative m-auto text-left ml-0 overflow-ellipsis overflow-hidden w-full max-w-full h-6 whitespace-nowrap">
-								{user.blog}
+								{user.blog || '-'}
 							</div>
 						</div>
 					</div>
