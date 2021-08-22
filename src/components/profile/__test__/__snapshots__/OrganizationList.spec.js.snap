@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organization List: Check content Renders correctly 1`] = `
+Array [
+  <a
+    href="/org/Organization1"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      className="mr-1 mb-1"
+      height="32px"
+      size="32px"
+      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+      width="32px"
+    />
+  </a>,
+  <a
+    href="/org/Organization2"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      className="mr-1 mb-1"
+      height="32px"
+      size="32px"
+      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+      width="32px"
+    />
+  </a>,
+]
+`;

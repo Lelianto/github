@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile: Check content Renders correctly 1`] = `
+<div
+  className="w-full p-0 md:p-3 pt-7 md:pt-3 relative md:-top-8"
+>
+  <div
+    className="flex flex-col"
+  >
+    <img
+      alt=""
+      className="rounded-full img-dynamic mx-auto"
+      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+    />
+    <div
+      className="py-3"
+    >
+      <div
+        className="text-left w-full text-2xl"
+        id="name"
+      >
+        Lelianto Eko Pradana
+      </div>
+      <div
+        className="text-left w-full text-xl text-gray-400"
+        id="login"
+      >
+        Lelianto
+      </div>
+    </div>
+    <div
+      className="text-left w-full text-base mb-2"
+      id="bio"
+    >
+      Love React.js!
+    </div>
+    <div
+      className="text-left w-full"
+    >
+      <button
+        className="el-button el-button--default text-center w-full"
+        disabled={false}
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        <span>
+          Edit profile
+        </span>
+      </button>
+    </div>
+    <div
+      className="flex text-left mt-3"
+    >
+      <div
+        className="relative m-auto mr-2 ml-0"
+      >
+        <svg
+          aria-hidden="true"
+          className="octicon octicon-people text-icon-tertiary"
+          data-view-component="true"
+          height="16"
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <path
+            d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+      <div
+        className="relative m-auto ml-0 mr-0"
+      >
+        <span
+          id="followers"
+        >
+          0
+        </span>
+         Followers 
+        <span>
+          •
+        </span>
+         
+        <span
+          id="following"
+        >
+          0
+        </span>
+         Following
+      </div>
+    </div>
+    <div
+      className="flex flex-col mt-3 border-b pb-3"
+    >
+      <div
+        className="flex"
+      >
+        <div
+          className="relative m-auto text-left ml-0 mr-2"
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-organization"
+            height="16"
+            version="1.1"
+            viewBox="0 0 16 16"
+            width="16"
+          >
+            <path
+              d="M1.5 14.25c0 .138.112.25.25.25H4v-1.25a.75.75 0 01.75-.75h2.5a.75.75 0 01.75.75v1.25h2.25a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25v12.5zM1.75 16A1.75 1.75 0 010 14.25V1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .085-.006.168-.018.25h2.268a.25.25 0 00.25-.25V8.285a.25.25 0 00-.111-.208l-1.055-.703a.75.75 0 11.832-1.248l1.055.703c.487.325.779.871.779 1.456v5.965A1.75 1.75 0 0114.25 16h-3.5a.75.75 0 01-.197-.026c-.099.017-.2.026-.303.026h-3a.75.75 0 01-.75-.75V14h-1v1.25a.75.75 0 01-.75.75h-3zM3 3.75A.75.75 0 013.75 3h.5a.75.75 0 010 1.5h-.5A.75.75 0 013 3.75zM3.75 6a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM3 9.75A.75.75 0 013.75 9h.5a.75.75 0 010 1.5h-.5A.75.75 0 013 9.75zM7.75 9a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM7 6.75A.75.75 0 017.75 6h.5a.75.75 0 010 1.5h-.5A.75.75 0 017 6.75zM7.75 3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="relative m-auto text-left ml-0 overflow-ellipsis overflow-hidden w-full max-w-full h-6 whitespace-nowrap"
+          id="company"
+        >
+          company
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="relative m-auto text-left ml-0 mr-2"
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-location"
+            height="16"
+            version="1.1"
+            viewBox="0 0 16 16"
+            width="16"
+          >
+            <path
+              d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="relative m-auto text-left ml-0 overflow-ellipsis overflow-hidden w-full max-w-full h-6 whitespace-nowrap"
+          id="location"
+        >
+          Indonesia
+        </div>
+      </div>
+      <div
+        className="flex"
+      >
+        <div
+          className="relative m-auto text-left ml-0 mr-2"
+        >
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-link"
+            data-view-component="true"
+            height="16"
+            version="1.1"
+            viewBox="0 0 16 16"
+            width="16"
+          >
+            <path
+              d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          className="relative m-auto text-left ml-0 overflow-ellipsis overflow-hidden w-full max-w-full h-6 whitespace-nowrap"
+          id="blog"
+        >
+          lelianto.eko
+        </div>
+      </div>
+    </div>
+    <div
+      className="flex flex-col pt-3 border-b pb-3"
+    >
+      <div
+        className="text-base text-left font-bold"
+      >
+        Achievements
+      </div>
+      <div
+        className="flex mt-3"
+      >
+        <img
+          alt=""
+          src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
+          width="64px"
+        />
+      </div>
+    </div>
+    <div
+      className="flex flex-col pt-3 pb-3"
+    >
+      <div
+        className="text-base text-left font-bold"
+      >
+        Organizations
+      </div>
+      <div
+        className="flex flex-wrap mt-3"
+      >
+        <a
+          href="/org/Organization1"
+          onClick={[Function]}
+        >
+          <img
+            alt=""
+            className="mr-1 mb-1"
+            height="32px"
+            size="32px"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+            width="32px"
+          />
+        </a>
+        <a
+          href="/org/Organization2"
+          onClick={[Function]}
+        >
+          <img
+            alt=""
+            className="mr-1 mb-1"
+            height="32px"
+            size="32px"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+            width="32px"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

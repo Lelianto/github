@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organization Profile: Check content Renders correctly 1`] = `
+<div
+  className="w-full text-left"
+>
+  <div
+    className="flex mt-5 mb-5"
+  >
+    <div
+      className="relative m-auto ml-0 mr-3 flex"
+    >
+      <img
+        alt=""
+        className="rounded-md"
+        height="100px"
+        src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+        width="100px"
+      />
+    </div>
+    <div
+      className="relative m-auto ml-0"
+    >
+      <div
+        className="text-lg font-bold text-black"
+        id="orgName"
+      >
+        Lelianto
+      </div>
+      <div
+        className="text-sm text-gray-500"
+        id="orgDesc"
+      >
+        React testing using jest in Organization Profile
+      </div>
+    </div>
+  </div>
+</div>
+`;

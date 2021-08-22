@@ -3,25 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "autoprefixer": "^9",
+    "dotenv": "^10.0.0",
     "element-react": "^1.4.34",
     "element-theme-default": "^1.4.13",
+    "postcss": "^7",
     "react": "^17.0.2",
+    "react-burger-menu": "^3.0.6",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-scroll": "^1.8.3",
     "react-test-renderer": "^17.0.2",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "sass": "^1.38.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "e2etest": "react-scripts test --testPathIgnorePatterns=.*e2e.test.js",
-    "e2etest:e2e": "react-scripts test --testPathPattern=.*e2e.test.js$"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --testPathPattern=.*spec.js$",
+    "eject": "craco eject",
+    "e2etest": "craco test --testPathIgnorePatterns=.*e2e.test.js",
+    "e2etest:e2e": "craco test --testPathPattern=.*e2e.test.js$"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +57,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "enzyme": "^3.11.0",
     "puppeteer": "^10.2.0",
+    "react-hot-loader": "^4.13.0",
     "react-test-renderer": "^17.0.2"
   }
 }
