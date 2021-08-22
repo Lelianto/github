@@ -37,7 +37,7 @@ const Login = () => {
 								<img className="relative m-auto rounded-full h-40 w-40 object-cover" src={mainLogo} alt="" />
 							</div>
 							<div className="text-2xl font-bold my-3">
-								<code>
+								<code id="login-text">
 									Lian Hub
 								</code>
 							</div>

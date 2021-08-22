@@ -25,6 +25,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
   </div>
   <div
     className="relative m-auto pl-2 -mt-1"
+    id="Setting"
   >
     Setting
   </div>

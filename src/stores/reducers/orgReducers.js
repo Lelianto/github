@@ -1,4 +1,5 @@
 import { GET_ORGANIZATION, getOrganization, GET_DETAIL, getDetail, GET_ORG_REPO, getOrgRepo } from "../actions/organization";
+import { headersObject } from "./headersObject";
 
 const initialState = {
 	organizations: {},
@@ -23,19 +24,19 @@ export const orgReducer = (state = initialState, action) => {
 }
 
 export const getOrganizationData = (data) => async (dispatch, getState) => {
-	const org = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/orgs`).then(res => res.json())
+	const org = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/orgs`, headersObject()).then(res => res.json())
 	dispatch(getOrganization(org))
 	return org
 }
 
 export const getOrganizationDetail = (data) => async (dispatch, getState) => {
-	const org = await fetch(`${process.env.REACT_APP_API_URL}/orgs/${data}`).then(res => res.json())
+	const org = await fetch(`${process.env.REACT_APP_API_URL}/orgs/${data}`, headersObject()).then(res => res.json())
 	dispatch(getDetail(org))
 	return org
 }
 
 export const getOrganizationRepos = (data) => async (dispatch, getState) => {
-	const orgRepo = await fetch(`${process.env.REACT_APP_API_URL}/orgs/${data}/repos`).then(res => res.json())
+	const orgRepo = await fetch(`${process.env.REACT_APP_API_URL}/orgs/${data}/repos`, headersObject()).then(res => res.json())
 	dispatch(getOrgRepo(orgRepo))
 	return orgRepo
 }

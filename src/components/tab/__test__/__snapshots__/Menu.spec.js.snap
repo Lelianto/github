@@ -37,6 +37,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
         </div>
         <div
           className="relative m-auto pl-2 -mt-1"
+          id="Overview"
         >
           Overview
         </div>
@@ -65,6 +66,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
         </div>
         <div
           className="relative m-auto pl-2 -mt-1"
+          id="Repositories"
         >
           Repositories
         </div>
@@ -93,6 +95,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
         </div>
         <div
           className="relative m-auto pl-2 -mt-1"
+          id="Projects"
         >
           Projects
         </div>
@@ -121,6 +124,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
         </div>
         <div
           className="relative m-auto pl-2 -mt-1"
+          id="Packages"
         >
           Packages
         </div>

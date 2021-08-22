@@ -1,27 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Menu Tab in Homepage: Check content Renders correctly 1`] = `
-<div
-  className="bg-white sm:w-full lg:container flex shadow-sm fixed left-0 top-0 right-0 z-2000"
->
-  <div
-    className="sm:w-0 md:w-1/4"
-  />
-  <div
-    className="sm:w-full md:w-1/2 flex max-w-full overflow-x-scroll no-scrollbar"
-  >
-    <div
-      className="flex justify-around"
-    >
-      Overview
-    </div>
-  </div>
-  <div
-    className="sm:w-0 md:w-1/4"
-  />
-</div>
-`;
-
 exports[`Menu Tab in Organization Page: Check content Renders correctly 1`] = `
 <div
   className="bg-white container flex shadow-sm fixed left-0 top-0 right-0 z-2000"

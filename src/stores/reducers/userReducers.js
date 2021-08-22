@@ -1,4 +1,5 @@
 import { GET_USER, GET_REPO, getUser, getRepo } from "../actions/user"
+import { headersObject } from "./headersObject"
 
 const initialState = {
 	user: {},
@@ -19,13 +20,13 @@ export const userReducer = (state = initialState, action) => {
 }
 
 export const getUserData = (data) => async (dispatch, getState) => {
-	const user = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}`).then(res => res.json())
+	const user = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}`, headersObject()).then(res => res.json())
 	await dispatch(getUser(user))
 	return user
 }
 
 export const getRepositories = (data) => async (dispatch, getState) => {
-	const repositories = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/repos`).then(res => res.json())
+	const repositories = await fetch(`${process.env.REACT_APP_API_URL}/users/${data}/repos`, headersObject()).then(res => res.json())
 	await dispatch(getRepo(repositories))
 	return repositories
 }
