@@ -79,7 +79,7 @@ const HomePage = (props) => {
 		if (["Overview", "Repositories"].includes(currentTab)) {
 			return (
 				<>
-					<div className="sm:w-full lg:container text-md mt-5 mb-3 text-left">
+					<div className="w-full lg:container text-md mt-5 mb-3 text-left">
 						{currentTab === "Overview" ? "Popular Repositories" : currentTab}
 					</div>
 					<Repositories repositories={props.repositories} />
@@ -99,17 +99,19 @@ const HomePage = (props) => {
 			<div id="main" className="w-full">
 				<Header lastUser={username} />
 			</div>
-			<div id="main" className="sm:w-full md:container">
+			<div id="main" className="w-full shadow-sm">
 				<br />
-				<Menu scroll={scroll} listOfMenu={listOfMenu} params={params.username} access="index" />
+				<div className="md:container mx-4">
+					<Menu scroll={scroll} listOfMenu={listOfMenu} params={params.username} access="index" />
+				</div>
 			</div>
-			<div id="main" className="container min-h-screen">
+			<div id="main" className="md:container mx-4 min-h-screen">
 				<div className="w-full">
-					<div className="sm:block md:flex">
-						<div className="sm:w-full md:w-1/4">
+					<div className="block md:flex">
+						<div className="w-full md:w-1/4">
 							<Profile user={props.user} organizations={props.organizations} />
 						</div>
-						<div className="sm:w-full md:w-3/4 flex flex-col">
+						<div className="w-full md:w-3/4 flex flex-col">
 							{tabContent()}
 						</div>
 					</div>

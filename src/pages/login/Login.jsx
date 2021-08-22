@@ -44,20 +44,21 @@ const Login = () => {
 	return (
 		<>
 			<div className="w-full bg-doodle bg-center bg-repeat bg-cover">
-				<div id="main" className="container">
+				<div id="main" className="md:container mx-4">
 					<div className="flex flex-col min-h-screen">
-						<div className="sm:w-11/12 md:3/4 lg:w-1/3 border rounded-lg px-5 py-5 relative m-auto bg-white shadow-lg">
-							<div className="flex">
-								<img className="relative m-auto rounded-full h-40 w-40 object-cover" src={mainLogo} alt="" />
-							</div>
+						<div className="w-full md:3/4 lg:w-1/3 border rounded-lg px-5 py-5 relative m-auto bg-white shadow-lg">
+							<img className="mx-auto rounded-full h-40 w-40 object-cover" src={mainLogo} alt="" />
 							<div className="text-2xl font-bold my-3">
 								<code id="login-text">
 									Lian Hub
 								</code>
 							</div>
 							<div>
-								<Input value={username} className="w-full text-custom" onChange={(e) => onChangeText(e)} onKeyPress={(e) => handleKeyPress(e)} placeholder="Input your github username and press enter" />
-								{error ? <div className="text-left sm:text-xs md:text-sm text-red-600">{error}</div> : <></>}
+								<Input value={username} className="w-full text-custom"
+									onChange={(e) => onChangeText(e)}
+									onKeyPress={(e) => handleKeyPress(e)}
+									placeholder="Input your github username and press enter" />
+								{error ? <div className="text-left text-xs md:text-sm text-red-600">{error}</div> : <></>}
 							</div>
 						</div>
 					</div>

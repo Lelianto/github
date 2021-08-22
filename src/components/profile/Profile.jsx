@@ -12,11 +12,9 @@ const Profile = ({ user, organizations }) => {
 	}
 	return (
 		<>
-			<div className="w-full sm:p-0 md:p-3 sm:pt-7 md:pt-3 relative md:-top-8">
+			<div className="w-full p-0 md:p-3 pt-7 md:pt-3 relative md:-top-8">
 				<div className="flex flex-col">
-					<div className="flex justify-center">
-						<img className="rounded-full img-dynamic" src={user.avatar_url} alt="" />
-					</div>
+					<img className="rounded-full img-dynamic mx-auto" src={user.avatar_url} alt="" />
 					<div className="py-3">
 						<div id="name" className="text-left w-full text-2xl">
 							{user.name}

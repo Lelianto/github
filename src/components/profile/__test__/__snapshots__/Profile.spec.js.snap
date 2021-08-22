@@ -2,20 +2,16 @@
 
 exports[`Profile: Check content Renders correctly 1`] = `
 <div
-  className="w-full p-3 sm:pt-7 md:pt-3 relative md:-top-8"
+  className="w-full p-0 md:p-3 pt-7 md:pt-3 relative md:-top-8"
 >
   <div
     className="flex flex-col"
   >
-    <div
-      className="flex justify-center"
-    >
-      <img
-        alt=""
-        className="rounded-full img-dynamic"
-        src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-      />
-    </div>
+    <img
+      alt=""
+      className="rounded-full img-dynamic mx-auto"
+      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+    />
     <div
       className="py-3"
     >

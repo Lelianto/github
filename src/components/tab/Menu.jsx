@@ -26,7 +26,7 @@ const Menu = (props) => {
 			<>
 				{
 					props.listOfMenu.map((content) => {
-						let defaultClass = 'flex justify-around sm:px-4 md:px-7 py-4 cursor-pointer'
+						let defaultClass = 'flex justify-around px-4 md:px-7 py-4 cursor-pointer'
 						if (activedMenu === content.title) {
 							defaultClass += ' border-b-2 border-orange-bold text-black'
 						} else {

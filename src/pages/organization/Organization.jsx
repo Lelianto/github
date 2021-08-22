@@ -78,7 +78,7 @@ const Organization = (props) => {
 		if (["Overview", "Repositories"].includes(currentTab)) {
 			return (
 				<>
-					<div className="sm:w-full md:container text-md mt-5 mb-3 text-left">
+					<div className="w-full md:container text-md mt-5 mb-3 text-left">
 						{currentTab === "Overview" ? "Popular Repositories" : currentTab}
 					</div>
 					<Repositories repositories={props.repositories} />
@@ -86,7 +86,7 @@ const Organization = (props) => {
 			)
 		} else {
 			return (
-				<div className="sm:w-full md:container text-md mt-10 mb-10 text-left">
+				<div className="w-full md:container text-md mt-10 mb-10 text-left">
 					<Empty username={orgname} currentTab={currentTab} />
 				</div>
 			)
@@ -98,13 +98,15 @@ const Organization = (props) => {
 			<div id="main" className="w-full">
 				<Header lastUser={username} />
 			</div>
-			<div id="main" className="container">
+			<div id="main" className="md:container mx-4">
 				<OrgProfile detail={props.detail} />
 			</div>
-			<div id="main" className="w-full">
-				<Menu scroll={scroll} listOfMenu={listMenuOrg} params={params.orgname} />
+			<div className="w-full shadow-sm">
+				<div id="main" className="md:container mx-4">
+					<Menu scroll={scroll} listOfMenu={listMenuOrg} params={params.orgname} />
+				</div>
 			</div>
-			<div id="main" className="container">
+			<div id="main" className="md:container mx-4">
 				{tabContent()}
 			</div>
 		</>

@@ -5,10 +5,10 @@ exports[`Header: Check menu content Renders correctly 1`] = `
   className="bg-white w-full shadow-md"
 >
   <div
-    className="sm:w-full md:container flex sm:justify-between md:justify-around"
+    className="w-full md:container flex justify-between md:justify-around"
   >
     <div
-      className="sm:block md:hidden mb-5"
+      className="block md:hidden mb-5"
     >
       <div>
         <div
@@ -253,7 +253,7 @@ exports[`Header: Check menu content Renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="sm:p-2"
+      className="p-2"
     >
       <a
         href="/last-user"
@@ -281,7 +281,7 @@ exports[`Header: Check menu content Renders correctly 1`] = `
       </a>
     </div>
     <div
-      className="sm:hidden md:flex justify-left w-2/3"
+      className="hidden md:flex justify-left w-2/3"
       id="textbox"
     >
       <div
@@ -324,7 +324,7 @@ exports[`Header: Check menu content Renders correctly 1`] = `
       </a>
     </div>
     <div
-      className="sm:p-2 flex"
+      className="p-2 flex"
     >
       <svg
         className="relative m-auto"

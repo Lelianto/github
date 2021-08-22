@@ -2,19 +2,19 @@
 
 exports[`Menu Tab Global: Check content Renders correctly 1`] = `
 <div
-  className="bg-white sm:w-full lg:container flex shadow-sm fixed left-0 top-0 right-0 z-2000"
+  className="bg-white w-full lg:container flex fixed left-0 top-0 right-0 z-2000"
 >
   <div
-    className="sm:w-0 md:w-1/4"
+    className="w-0 md:w-1/4"
   />
   <div
-    className="sm:w-full md:w-1/2 flex max-w-full overflow-x-scroll no-scrollbar"
+    className="w-full md:w-1/2 flex max-w-full overflow-x-scroll no-scrollbar"
   >
     <div
       className="flex justify-around"
     >
       <div
-        className="flex justify-around sm:px-4 md:px-7 py-4 cursor-pointer border-b-2 border-orange-bold text-black"
+        className="flex justify-around px-4 md:px-7 py-4 cursor-pointer border-b-2 border-orange-bold text-black"
         onClick={[Function]}
       >
         <div
@@ -43,7 +43,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
         </div>
       </div>
       <div
-        className="flex justify-around sm:px-4 md:px-7 py-4 cursor-pointer text-gray-400"
+        className="flex justify-around px-4 md:px-7 py-4 cursor-pointer text-gray-400"
         onClick={[Function]}
       >
         <div
@@ -72,7 +72,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
         </div>
       </div>
       <div
-        className="flex justify-around sm:px-4 md:px-7 py-4 cursor-pointer text-gray-400"
+        className="flex justify-around px-4 md:px-7 py-4 cursor-pointer text-gray-400"
         onClick={[Function]}
       >
         <div
@@ -101,7 +101,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
         </div>
       </div>
       <div
-        className="flex justify-around sm:px-4 md:px-7 py-4 cursor-pointer text-gray-400"
+        className="flex justify-around px-4 md:px-7 py-4 cursor-pointer text-gray-400"
         onClick={[Function]}
       >
         <div
@@ -132,7 +132,7 @@ exports[`Menu Tab Global: Check content Renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="sm:w-0 md:w-1/4"
+    className="w-0 md:w-1/4"
   />
 </div>
 `;
