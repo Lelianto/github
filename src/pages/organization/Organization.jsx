@@ -1,14 +1,26 @@
+/**
+ * @description import dependencies
+ */
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { useLocation, useParams, useHistory } from 'react-router-dom';
+/**
+ * @description import components
+ */
 import Header from '../../components/header/Header';
 import OrgProfile from '../../components/orgprofile/OrgProfile';
-import { getOrganizationDetail, getOrganizationRepos } from '../../stores/reducers/orgReducers';
 import Menu from '../../components/tab/Menu';
-import { listMenuOrg } from '../../assets/svg';
 import Repositories from '../../components/repository/Repositories';
 import Empty from '../../components/empty/Empty';
+/**
+ * @description import reducers, store function, and assets
+ */
+import { getOrganizationDetail, getOrganizationRepos } from '../../stores/reducers/orgReducers';
+import { listMenuOrg } from '../../assets/svg';
 
+/**
+ * @function useQuery to access query params in route
+ */
 const useQuery = () => {
 	return new URLSearchParams(useLocation().search);
 }
@@ -25,6 +37,9 @@ const Organization = (props) => {
 	const [username, setUsername] = useState('')
 
 	useEffect(() => {
+		/**
+		 * @function getOrganizationDetail, @function getOrganizationRepos, @function setUsername will be fired when the @param params.username changed
+		 */
 		dispatch(getOrganizationDetail(params.orgname)).then(response => {
 			if (response.message) return history.push('/login')
 		})
@@ -32,6 +47,10 @@ const Organization = (props) => {
 		setUsername(localStorage.getItem("lastUser"))
 	}, [params.orgname])
 
+	/**
+	 * @function handleScroll to handle scroll event and get scroll position event
+	 * @param {*} event
+	 */
 	const handleScroll = (event) => {
 		setScroll(event.srcElement.documentElement.scrollTop > 75)
 	}
@@ -44,10 +63,17 @@ const Organization = (props) => {
 	}, [])
 
 	useEffect(() => {
+		/**
+		 * @function setOrgName, @function setCurrentTab will be fired when location is changing
+		 */
 		setOrgName(params.orgname)
 		setCurrentTab(queries.get('tab') || 'Overview')
 	}, [location]);
 
+	/**
+	 * @function tabContent to handle logic between contained tab page and not.
+	 * @return conditional component based on @function setCurrentTab and @var currentTab
+	 */
 	const tabContent = () => {
 		if (["Overview", "Repositories"].includes(currentTab)) {
 			return (
@@ -85,6 +111,12 @@ const Organization = (props) => {
 	)
 }
 
+/**
+ * @function mapStateToProps contain with any state from store file
+ * @param {*} state
+ * @returns @var detail for getting organization detail object from orgReducer
+ * @returns @var repositories for getting orgRepositories object from orgReducer
+ */
 const mapStateToProps = state => {
 	return {
 		detail: state.orgReducer.detail,

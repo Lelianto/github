@@ -1,15 +1,27 @@
+/**
+ * @description import dependencies
+ */
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { useLocation, useParams, useHistory } from 'react-router-dom';
+/**
+ * @description import components
+ */
 import Header from '../../components/header/Header';
 import Menu from '../../components/tab/Menu';
 import Profile from '../../components/profile/Profile';
+import Repositories from '../../components/repository/Repositories';
+import Empty from '../../components/empty/Empty';
+/**
+ * @description import reducers, store function, and assets
+ */
 import { getUserData, getRepositories } from '../../stores/reducers/userReducers';
 import { getOrganizationData } from '../../stores/reducers/orgReducers'
 import { listOfMenu } from '../../assets/svg';
-import Repositories from '../../components/repository/Repositories';
-import Empty from '../../components/empty/Empty';
 
+/**
+ * @function useQuery to access query params in route
+ */
 const useQuery = () => {
 	return new URLSearchParams(useLocation().search);
 }
@@ -25,19 +37,29 @@ const HomePage = (props) => {
 	const [currentTab, setCurrentTab] = useState('Overview')
 
 	useEffect(() => {
+		/**
+		 * @function getUserData, @function getRepositories, @function getOrganizationData, @function setUsername will be fired when the @param params.username changed
+		 */
 		dispatch(getUserData(params.username)).then(response => {
 			if (response.message) return history.push('/login')
 		})
 		dispatch(getRepositories(params.username))
 		dispatch(getOrganizationData(params.username))
-		localStorage.setItem("lastUser", params.username)
 		setUsername(params.username)
+		localStorage.setItem("lastUser", params.username)
 	}, [params.username])
 
 	useEffect(() => {
+		/**
+		 * @function setCurrentTab will be fired in every changes of @var location
+		 */
 		setCurrentTab(queries.get('tab') || 'Overview')
 	}, [location])
 
+	/**
+	 * @function handleScroll to handle scroll event and get scroll position event
+	 * @param {*} event 
+	 */
 	const handleScroll = (event) => {
 		setScroll(event.srcElement.documentElement.scrollTop > 75)
 	}
@@ -49,6 +71,10 @@ const HomePage = (props) => {
 		}
 	}, [])
 
+	/**
+	 * @function tabContent to handle logic between contained tab page and not.
+	 * @return conditional component based on @function setCurrentTab and @var currentTab
+	 */
 	const tabContent = () => {
 		if (["Overview", "Repositories"].includes(currentTab)) {
 			return (
@@ -93,6 +119,13 @@ const HomePage = (props) => {
 	)
 }
 
+/**
+ * @function mapStateToProps contain with any state from store file
+ * @param {*} state 
+ * @returns @var user for getting user object from userReducer
+ * @returns @var repositories for getting repositories object from userReducer
+ * @returns @var organizations for getting organizations object from orgReducer
+ */
 const mapStateToProps = state => {
 	return {
 		user: state.userReducer.user,

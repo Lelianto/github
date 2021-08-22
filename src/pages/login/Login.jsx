@@ -1,19 +1,31 @@
+/**
+ * @description import dependencies
+ */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from 'element-react';
 import { useHistory } from 'react-router-dom'
-import mainLogo from '../../assets/images/mainLogo.jpg'
+/**
+ * @description import reducers, store function, and assets
+ */
 import { getUserData } from '../../stores/reducers/userReducers';
+import mainLogo from '../../assets/images/mainLogo.jpg'
 
 const Login = () => {
 	let dispatch = useDispatch()
 	let history = useHistory();
 	const [username, setUsername] = useState('')
 
+	/**
+	 * @function onChangeText to make username be changed based on @param e
+	 * @function setUsername to change username text
+	 */
 	const onChangeText = (e) => {
 		setUsername(e)
 	}
-
+	/**
+	 * @function handleKeyPress handle 'Enter' keypress based on @param e
+	 */
 	const handleKeyPress = (e) => {
 		if (e.which === 13 && username) {
 			dispatch(getUserData(username)).then(response => {
