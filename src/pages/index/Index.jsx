@@ -99,7 +99,7 @@ const HomePage = (props) => {
 			<div id="main" className="w-full">
 				<Header lastUser={username} />
 			</div>
-			<div id="main" className="w-full shadow-sm">
+			<div id="main" className="w-full shadow-sm max-w-full overflow-x-scroll no-scrollbar">
 				<br />
 				<div className="md:container mx-4">
 					<Menu scroll={scroll} listOfMenu={listOfMenu} params={params.username} access="index" />

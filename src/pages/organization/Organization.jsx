@@ -101,7 +101,7 @@ const Organization = (props) => {
 			<div id="main" className="md:container mx-4">
 				<OrgProfile detail={props.detail} />
 			</div>
-			<div className="w-full shadow-sm">
+			<div className="w-full shadow-sm max-w-full overflow-x-scroll no-scrollbar">
 				<div id="main" className="md:container mx-4">
 					<Menu scroll={scroll} listOfMenu={listMenuOrg} params={params.orgname} />
 				</div>
